@@ -1,0 +1,566 @@
+﻿{
+        "info": {
+                "_postman_id": "f4add390-f550-41b9-83f4-521ae1ceb30e",
+                "name": "PETSTORE_FOKA",
+                "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+                "_exporter_id": "29414529"
+        },
+        "item": [
+                {
+                        "name": "Add a new pet to the store",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Status code is 200\", function () {\r",
+                                                        "    pm.response.to.have.status(200);\r",
+                                                        "});"
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"niki\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "https://petstore.swagger.io/v2/pet/",
+                                        "protocol": "https",
+                                        "host": [
+                                                "petstore",
+                                                "swagger",
+                                                "io"
+                                        ],
+                                        "path": [
+                                                "v2",
+                                                "pet",
+                                                ""
+                                        ]
+                                }
+                        },
+                        "response": []
+                },
+                {
+                        "name": "Add a new pet to the store response body",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Check response\", function () {\r",
+                                                        "    var jsonData = pm.response.json();\r",
+                                                        "    pm.expect(jsonData.category.name).to.eql(\"myshka\");\r",
+                                                        "});\r",
+                                                        ""
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"niki\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "https://petstore.swagger.io/v2/pet/",
+                                        "protocol": "https",
+                                        "host": [
+                                                "petstore",
+                                                "swagger",
+                                                "io"
+                                        ],
+                                        "path": [
+                                                "v2",
+                                                "pet",
+                                                ""
+                                        ]
+                                }
+                        },
+                        "response": []
+                },
+                {
+                        "name": "Add a new pet to the store 405",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Status code is 405\", function () {\r",
+                                                        "    pm.response.to.have.status(405);\r",
+                                                        "});"
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "request": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"niki\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "http://petstore.swagger.io/v2/pet/",
+                                        "protocol": "http",
+                                        "host": [
+                                                "petstore",
+                                                "swagger",
+                                                "io"
+                                        ],
+                                        "path": [
+                                                "v2",
+                                                "pet",
+                                                ""
+                                        ]
+                                }
+                        },
+                        "response": []
+                },
+                {
+                        "name": "Find pet by status",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Status code is 200\", function () {\r",
+                                                        "    pm.response.to.have.status(200);\r",
+                                                        "});"
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                        },
+                        "request": {
+                                "method": "GET",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"niki\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "{{BaseURL}}/pet/findByStatus?status=available",
+                                        "host": [
+                                                "{{BaseURL}}"
+                                        ],
+                                        "path": [
+                                                "pet",
+                                                "findByStatus"
+                                        ],
+                                        "query": [
+                                                {
+                                                        "key": "status",
+                                                        "value": "available"
+                                                }
+                                        ]
+                                }
+                        },
+                        "response": []
+                },
+                {
+                        "name": "Find pet by status 400",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Status code is 400\", function () {\r",
+                                                        "    pm.response.to.have.status(400);\r",
+                                                        "});"
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                        },
+                        "request": {
+                                "method": "GET",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"niki\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "{{BaseURL}}/pet/findByStatus?status=available",
+                                        "host": [
+                                                "{{BaseURL}}"
+                                        ],
+                                        "path": [
+                                                "pet",
+                                                "findByStatus"
+                                        ],
+                                        "query": [
+                                                {
+                                                        "key": "status",
+                                                        "value": "available"
+                                                }
+                                        ]
+                                }
+                        },
+                        "response": []
+                },
+                {
+                        "name": "Find Pet by ID ",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Status code is 200\", function () {\r",
+                                                        "    pm.response.to.have.status(200);\r",
+                                                        "});\r",
+                                                        ""
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                        },
+                        "request": {
+                                "method": "GET",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"niki\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "{{BaseURL}}/pet/9223372036854763446",
+                                        "host": [
+                                                "{{BaseURL}}"
+                                        ],
+                                        "path": [
+                                                "pet",
+                                                "9223372036854763446"
+                                        ]
+                                }
+                        },
+                        "response": []
+                },
+                {
+                        "name": "Find Pet by ID  404",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Status code is 404\", function () {\r",
+                                                        "    pm.response.to.have.status(404);\r",
+                                                        "});"
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                        },
+                        "request": {
+                                "method": "GET",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"niki\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "https://petstore.swagger.io/v2/pet/9223372036854763446",
+                                        "protocol": "https",
+                                        "host": [
+                                                "petstore",
+                                                "swagger",
+                                                "io"
+                                        ],
+                                        "path": [
+                                                "v2",
+                                                "pet",
+                                                "9223372036854763446"
+                                        ]
+                                }
+                        },
+                        "response": []
+                },
+                {
+                        "name": "Find Pet by ID  404",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Status code is 404\", function () {\r",
+                                                        "    pm.response.to.have.status(404);\r",
+                                                        "});"
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                        },
+                        "request": {
+                                "method": "GET",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"niki\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "https://petstore.swagger.io/v2/pet/0",
+                                        "protocol": "https",
+                                        "host": [
+                                                "petstore",
+                                                "swagger",
+                                                "io"
+                                        ],
+                                        "path": [
+                                                "v2",
+                                                "pet",
+                                                "0"
+                                        ]
+                                }
+                        },
+                        "response": []
+                },
+                {
+                        "name": "Update an existing pet ",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Status code is 200\", function () {\r",
+                                                        "    pm.response.to.have.status(200);\r",
+                                                        "});\r",
+                                                        "\r",
+                                                        ""
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "request": {
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"Luna\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "https://petstore.swagger.io/v2/pet/",
+                                        "protocol": "https",
+                                        "host": [
+                                                "petstore",
+                                                "swagger",
+                                                "io"
+                                        ],
+                                        "path": [
+                                                "v2",
+                                                "pet",
+                                                ""
+                                        ]
+                                }
+                        },
+                        "response": []
+                },
+                {
+                        "name": "Update an existing pet  400",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Status code is 400\", function () {\r",
+                                                        "    pm.response.to.have.status(400);\r",
+                                                        "});\r",
+                                                        "\r",
+                                                        ""
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "request": {
+                                "method": "PUT",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"Luna\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "https://petstore.swagger.io/v2/pet/",
+                                        "protocol": "https",
+                                        "host": [
+                                                "petstore",
+                                                "swagger",
+                                                "io"
+                                        ],
+                                        "path": [
+                                                "v2",
+                                                "pet",
+                                                ""
+                                        ]
+                                }
+                        },
+                        "response": []
+                },
+                {
+                        "name": "Delete a pet",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Status code is 200\", function () {\r",
+                                                        "    pm.response.to.have.status(200);\r",
+                                                        "});"
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "request": {
+                                "method": "DELETE",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"niki\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "https://petstore.swagger.io/v2/pet/9223372036854763446",
+                                        "protocol": "https",
+                                        "host": [
+                                                "petstore",
+                                                "swagger",
+                                                "io"
+                                        ],
+                                        "path": [
+                                                "v2",
+                                                "pet",
+                                                "9223372036854763446"
+                                        ]
+                                }
+                        },
+                        "response": []
+                },
+                {
+                        "name": "Delete a pet 404",
+                        "event": [
+                                {
+                                        "listen": "test",
+                                        "script": {
+                                                "exec": [
+                                                        "pm.test(\"Status code is 404\", function () {\r",
+                                                        "    pm.response.to.have.status(404);\r",
+                                                        "});"
+                                                ],
+                                                "type": "text/javascript"
+                                        }
+                                }
+                        ],
+                        "request": {
+                                "method": "DELETE",
+                                "header": [],
+                                "body": {
+                                        "mode": "raw",
+                                        "raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"myshka\"\r\n  },\r\n  \"name\": \"niki\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+                                        "options": {
+                                                "raw": {
+                                                        "language": "json"
+                                                }
+                                        }
+                                },
+                                "url": {
+                                        "raw": "https://petstore.swagger.io/v2/pet/9223372036854763446",
+                                        "protocol": "https",
+                                        "host": [
+                                                "petstore",
+                                                "swagger",
+                                                "io"
+                                        ],
+                                        "path": [
+                                                "v2",
+                                                "pet",
+                                                "9223372036854763446"
+                                        ]
+                                }
+                        },
+                        "response": []
+                }
+        ],
+        "variable": [
+                {
+                        "key": "BaseURL",
+                        "value": "https://petstore.swagger.io/v2"
+                }
+        ]
+}
